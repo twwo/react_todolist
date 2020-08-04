@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import TodoList from '../components/TodoList'
 
 const mapStateToProps = (state) => ({
-    todoList:state.TodoList,
+    todoList: state.TodoList,
     length : state.TodoList.length
 })
 

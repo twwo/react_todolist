@@ -8,7 +8,6 @@ class TodoForm extends React.Component {
 
   addTodo = (event) => {
     this.props.addTodo(this.state.value);
-    //document.getElementById("value").value = "";
   };
 
   changeValue = (event) => {

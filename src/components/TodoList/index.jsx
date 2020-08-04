@@ -1,16 +1,14 @@
-import Todo from "../Todo";
+import TodoContainer from "../../containers/TodoContainer";
 import React from "react";
 
 export default class TodoList extends React.Component {
-    constructor(props){
-        super(props)
-    }
+
 
   render() {
     return (
       
         this.props.todoList.map((todo, index) => (
-            <div><Todo value={todo} key={index} /><br /></div>
+            <div><TodoContainer value={todo} index={index} /><br /></div>
         ))
       
     );
