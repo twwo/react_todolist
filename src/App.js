@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
-import TodoFormContainer from "./containers/TodoFormContainer";
-import TodoListContainer from "./containers/TodoListContainer";
+// import TodoFormContainer from "./containers/TodoFormContainer";
+// import TodoListContainer from "./containers/TodoListContainer";
 import DoneTodoListContainer from "./containers/DoneTodoListContainer"
 import { HashRouter, Route, Link } from "react-router-dom";
+import Home from './components/Home'
 
 function App() {
   return (
@@ -19,11 +20,10 @@ function App() {
                 <Link to="/doneTodoList">go to done list</Link>
               </li>
             </ul>
-            <Route exact path="/" component={TodoListContainer}></Route>
+            <Route exact path="/" component={Home}></Route>
             <Route exact path="/doneTodoList" component={DoneTodoListContainer}></Route>
           </HashRouter>
         </React.Fragment>
-        <TodoFormContainer />
       </header>
     </div>
   );
