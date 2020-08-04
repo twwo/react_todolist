@@ -1,16 +1,25 @@
 import React from "react";
 
 class TodoForm extends React.Component {
+  constructor(props){
+    super(props)
+    this.state={value:""}
+  }
+
   addTodo = (event) => {
-    this.props.addTodo(event.target.value);
-    document.getElementById("value").value = "";
+    this.props.addTodo(this.state.value);
+    //document.getElementById("value").value = "";
   };
+
+  changeValue = (event) => {
+    this.setState({value:event.target.value})
+  }
 
   render() {
     return (
       <div>
-        <input id="value" type="text" />
-        <button value="add" onClick={this.addTodo}>
+        <input id="value" type="text" onChange={this.changeValue}/>
+        <button onClick={this.addTodo}>
           ADD
         </button>
       </div>
