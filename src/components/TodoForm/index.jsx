@@ -9,7 +9,7 @@ class TodoForm extends React.Component {
   }
 
   addTodo = (event) => {
-    this.props.addTodo('1',this.state.value);
+    this.props.addTodo(this.props.todoList.length, this.state.value);
   };
 
   changeValue = (event) => {

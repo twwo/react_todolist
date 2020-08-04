@@ -8,15 +8,15 @@ const todoList = (state = [], action) => {
     }
 
     case "DELETE_TODO": {
-      let newState = state.filter((value, index) => {
-        return index !== action.index;
+      let newState = state.filter((value) => {
+        return value.id !== action.id;
       });
       return newState;
     }
 
     case "DONE_TODO": {
       let newState = [...state];
-      newState[action.index].status = !newState[action.index].status;
+      newState[action.id].status = !newState[action.id].status;
       return newState;
     }
 

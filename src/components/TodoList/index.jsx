@@ -5,7 +5,7 @@ export default class TodoList extends React.Component {
   render() {
     return this.props.todoList.map((todo, index) => (
       <div>
-        <TodoContainer value={todo} index={index} />
+        <TodoContainer value={todo} key={index} />
         <br />
       </div>
     ));
