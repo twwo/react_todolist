@@ -12,10 +12,8 @@ export default class Todo extends React.Component {
   };
 
   doneTodo = () => {
-    console.log(document.getElementById("test").className);
-    console.log(this.props.value.done)
     this.props.doneTodo(this.props.index);
-    this.setState({className:this.props.value.done==true?'done':'undo'});
+    this.setState({className:this.props.value.status==true?'done':'undo'});
   };
 
   render() {
