@@ -1,9 +1,11 @@
 import React from "react";
 
 class TodoForm extends React.Component {
-  constructor(props){
-    super(props)
-    this.state={value:""}
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: "",
+    };
   }
 
   addTodo = (event) => {
@@ -11,16 +13,14 @@ class TodoForm extends React.Component {
   };
 
   changeValue = (event) => {
-    this.setState({value:event.target.value})
-  }
+    this.setState({ value: event.target.value });
+  };
 
   render() {
     return (
       <div>
-        <input id="value" type="text" onChange={this.changeValue}/>
-        <button onClick={this.addTodo}>
-          ADD
-        </button>
+        <input id="value" type="text" onChange={this.changeValue} />
+        <button onClick={this.addTodo}>ADD</button>
       </div>
     );
   }

@@ -1,9 +1,9 @@
-import { connect } from 'react-redux';
-import TodoList from '../components/TodoList'
+import { connect } from "react-redux";
+import TodoList from "../components/TodoList";
 
 const mapStateToProps = (state) => ({
-    todoList: state.TodoList,
-    length : state.TodoList.length
-})
+  todoList: state.TodoList,
+  length: state.TodoList.length,
+});
 
-export default connect(mapStateToProps)(TodoList)
+export default connect(mapStateToProps)(TodoList);
