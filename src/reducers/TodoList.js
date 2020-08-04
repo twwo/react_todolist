@@ -1,7 +1,7 @@
 const todoList = (state = [], action) => {
   switch (action.type) {
     case "ADD_TODO": {
-      return [...state, { value: action.value, done: false }];
+      return [...state, { id:action.id,content: action.content, done: false }];
     }
 
     case "DELETE_TODO": {

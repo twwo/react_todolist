@@ -2,8 +2,8 @@ import { connect } from "react-redux";
 import TodoForm from "../components/TodoForm";
 
 const mapDispatchToProps = (dispatch) => ({
-  addTodo: (value) => {
-    dispatch({ type: "ADD_TODO", value });
+  addTodo: (id,content) => {
+    dispatch({ type: "ADD_TODO", id,content});
   },
 });
 
