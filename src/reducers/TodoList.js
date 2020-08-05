@@ -20,6 +20,7 @@ const todoList = (state = [], action) => {
         if (value.id === action.id) {
           value.status = !value.status;
         }
+        return value;
       });
       return newState;
     }

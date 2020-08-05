@@ -1,5 +1,7 @@
 import React from "react";
-import {postTodo}  from "../../api/index"
+import { postTodo } from "../../api/index";
+import { Input, Button, Space } from "antd";
+import { PlusOutlined } from "@ant-design/icons";
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -12,12 +14,11 @@ class TodoForm extends React.Component {
   addTodo = () => {
     let todo = {
       content: this.state.value,
-      status: false
-    }
-    postTodo(todo)
-    .then((response) => {
+      status: false,
+    };
+    postTodo(todo).then((response) => {
       this.props.addTodo(response.data.id, response.data.content);
-    })
+    });
   };
 
   changeValue = (event) => {
@@ -27,8 +28,18 @@ class TodoForm extends React.Component {
   render() {
     return (
       <div>
-        <input id="value" type="text" onChange={this.changeValue} />
-        <button onClick={this.addTodo}>ADD</button>
+        <Space>
+          <Input
+            size="large"
+            placeholder="input Todo here..."
+            id="value"
+            type="text"
+            onChange={this.changeValue}
+          />
+          <Button icon={<PlusOutlined />} size="large" onClick={this.addTodo}>
+            ADD
+          </Button>
+        </Space>
       </div>
     );
   }
