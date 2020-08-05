@@ -5,12 +5,12 @@ import { deleteTodo, putTodo } from "../../api";
 export default class Todo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { className: "undo" };
+    this.state = { className: "" };
   }
 
   componentDidMount() {
     this.setState({
-      className: this.props.value.status === true ? "done" : "undo",
+      className: this.props.value.status === true ? "done" : "",
     });
   }
 
@@ -29,7 +29,7 @@ export default class Todo extends React.Component {
     putTodo(todo).then((response) => {
       this.props.doneTodo(this.props.value.id);
       this.setState({
-        className: this.props.value.status === true ? "done" : "undo",
+        className: this.props.value.status === true ? "done" : "",
       });
     });
   };
