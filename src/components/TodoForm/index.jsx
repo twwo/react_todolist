@@ -1,4 +1,5 @@
 import React from "react";
+import {postTodo}  from "../../api/index"
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -8,8 +9,15 @@ class TodoForm extends React.Component {
     };
   }
 
-  addTodo = (event) => {
-    this.props.addTodo(this.props.todoList.length, this.state.value);
+  addTodo = () => {
+    let todo = {
+      content: this.state.value,
+      status: false
+    }
+    postTodo(todo)
+    .then((response) => {
+      this.props.addTodo(response.data.id, response.data.content);
+    })
   };
 
   changeValue = (event) => {
