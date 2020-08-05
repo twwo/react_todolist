@@ -7,12 +7,12 @@ import { CloseOutlined } from '@ant-design/icons'
 export default class Todo extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { className: "" };
+    this.state = { className: "undo" };
   }
 
   componentDidMount() {
     this.setState({
-      className: this.props.value.status === true ? "done" : "",
+      className: this.props.value.status === true ? "done" : "undo",
     });
   }
 
@@ -31,7 +31,7 @@ export default class Todo extends React.Component {
     putTodo(todo).then(() => {
       this.props.doneTodo(this.props.value.id);
       this.setState({
-        className: this.props.value.status === true ? "done" : "",
+        className: this.props.value.status === true ? "done" : "undo",
       });
     });
   };
@@ -43,7 +43,7 @@ export default class Todo extends React.Component {
           <span onClick={this.doneTodo} className={this.state.className}>
             {this.props.value.content}
           </span>
-          <Button icon={<CloseOutlined />} onClick={this.deleteTodo}></Button>
+          <Button icon={<CloseOutlined />} onClick={this.deleteTodo} />
         </Space>
       </div>
     );

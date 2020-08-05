@@ -3,14 +3,6 @@ import React from "react";
 import { getTodoList } from "../../api/index";
 import { List } from "antd";
 
-const data = [
-  'Racing car sprays burning fuel into crowd.',
-  'Japanese princess to wed commoner.',
-  'Australian walks 100km after outback crash.',
-  'Man charged over missing wedding girl.',
-  'Los Angeles battles huge wildfires.',
-];
-
 export default class TodoList extends React.Component {
   componentDidMount() {
     getTodoList().then((response) => {
@@ -23,7 +15,7 @@ export default class TodoList extends React.Component {
     return (
       <List
         itemLayout="horizontal"
-        dataSource={data}
+        dataSource={this.props.todoList}
         renderItem={todo => (
           <List.Item>
             <TodoContainer value={todo} /> 
