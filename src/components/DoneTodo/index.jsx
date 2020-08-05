@@ -6,7 +6,7 @@ export default class DoneTodo extends React.Component {
     return (
       <div>
         <span>
-          {this.props.value.id}. {this.props.value.content}
+          {this.props.value.content}
         </span>
       </div>
     );

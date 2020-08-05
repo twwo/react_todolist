@@ -38,7 +38,7 @@ export default class Todo extends React.Component {
     return (
       <div>
         <span onClick={this.doneTodo} className={this.state.className}>
-          {this.props.value.id}.{this.props.value.content}
+          {this.props.value.content}
         </span>
         <button onClick={this.deleteTodo}>X</button>
       </div>
