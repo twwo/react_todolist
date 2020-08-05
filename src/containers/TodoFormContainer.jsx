@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import TodoForm from "../components/TodoForm";
+import { addTodoAction } from "../actions/index"
 
 const mapStateToProps = (state) => ({
   todoList: state.TodoList,
@@ -7,7 +8,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   addTodo: (id, content) => {
-    dispatch({ type: "ADD_TODO", id, content });
+    dispatch(addTodoAction(id, content));
   },
 });
 

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import TodoList from "../components/TodoList";
+import { updateTodoListAction } from "../actions/index"
 
 const mapStateToProps = (state) => ({
   todoList: state.TodoList,
@@ -7,7 +8,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   updateTodoList: (todoList) => {
-    dispatch({type: "UPDATE_TODO_LIST", todoList})
+    dispatch(updateTodoListAction(todoList))
   }
 })
 
