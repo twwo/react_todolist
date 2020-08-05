@@ -1,5 +1,5 @@
 .done {
-    color: red;
+    text-decoration: line-through;
 }
 
 .undo {

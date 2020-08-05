@@ -1,8 +1,10 @@
 import React from "react";
 import "./todo.css";
 import { deleteTodo, putTodo } from "../../api";
-import { Button, Space, Card } from "antd";
+import { Button, Space, Card, Typography } from "antd";
 import { CloseOutlined } from "@ant-design/icons";
+
+const { Text } = Typography;
 
 export default class Todo extends React.Component {
   constructor(props) {
@@ -41,9 +43,9 @@ export default class Todo extends React.Component {
       <div>
         <Space>
           <Card>
-            <span onClick={this.doneTodo} className={this.state.className}>
+            <Text className={this.state.className} onClick={this.doneTodo}>
               {this.props.value.content}
-            </span>
+            </Text>
             <Button icon={<CloseOutlined />} onClick={this.deleteTodo} />
           </Card>
         </Space>
