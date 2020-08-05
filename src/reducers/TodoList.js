@@ -16,8 +16,16 @@ const todoList = (state = [], action) => {
 
     case "DONE_TODO": {
       let newState = [...state];
-      newState[action.id].status = !newState[action.id].status;
+      newState.map((value) => {
+        if (value.id === action.id) {
+          value.status = !value.status
+        } 
+      })
       return newState;
+    }
+
+    case "UPDATE_TODO_LIST": {
+      return action.todoList;
     }
 
     default:
