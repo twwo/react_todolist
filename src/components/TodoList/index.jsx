@@ -14,7 +14,7 @@ export default class TodoList extends React.Component {
   render() {
     return (
       <List
-        itemLayout="horizontal"
+        itemLayout="vertical"
         dataSource={this.props.todoList}
         renderItem={todo => (
           <List.Item>
