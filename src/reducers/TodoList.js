@@ -18,9 +18,9 @@ const todoList = (state = [], action) => {
       let newState = [...state];
       newState.map((value) => {
         if (value.id === action.id) {
-          value.status = !value.status
-        } 
-      })
+          value.status = !value.status;
+        }
+      });
       return newState;
     }
 

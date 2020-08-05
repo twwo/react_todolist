@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import DoneTodoList from "../components/DoneTodoList";
 
 const mapStateToProps = (state) => ({
-  todoList: state.TodoList.filter((value, index) => {
+  doneTodoList: state.TodoList.filter((value) => {
       return value.status;
   })
 });

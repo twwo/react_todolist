@@ -1,15 +1,12 @@
 import React from "react";
-import TodoContainer from "../../containers/TodoContainer";
+import DoneTodo from "../DoneTodo";
 
 export default class DoneTodoList extends React.Component {
-    componentDidMount(){
-        console.log("1111")
-    }
 
     render() {
-        return this.props.todoList.map((todo, index) => (
+        return this.props.doneTodoList.map((doneTodo, index) => (
           <div>
-            <TodoContainer value={todo} index={index} />
+            <DoneTodo value={doneTodo} index={index} />
             <br />
           </div>
         ));

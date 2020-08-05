@@ -14,3 +14,7 @@ export const deleteTodo = (id) => {
     return axios.delete(host + `/${id}`);
 }
 
+export const putTodo = (todo) => {
+    return axios.put(host + `/${todo.id}`, todo);
+}
+
