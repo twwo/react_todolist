@@ -1,5 +1,6 @@
 import React from "react";
 import "./todo.css";
+import { deleteTodo } from '../../api'
 
 export default class Todo extends React.Component {
   constructor(props) {
@@ -14,7 +15,11 @@ export default class Todo extends React.Component {
   }
 
   deleteTodo = () => {
-    this.props.deleteTodo(this.props.value.id);
+    deleteTodo(this.props.value.id)
+    .then((response) => {
+      console.log(response);
+      this.props.deleteTodo(this.props.value.id);
+    })
   };
 
   doneTodo = () => {
@@ -31,7 +36,7 @@ export default class Todo extends React.Component {
           onClick={this.doneTodo}
           className={this.state.className}
         >
-          {this.props.value.id}, {this.props.value.content}
+          {this.props.value.id}.{this.props.value.content}
         </span>
         <button onClick={this.deleteTodo}>X</button>
       </div>
