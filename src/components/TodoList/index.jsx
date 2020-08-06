@@ -9,16 +9,16 @@ export default class TodoList extends React.Component {
       this.props.updateTodoList(response.data);
     });
   }
-  
 
   render() {
     return (
       <List
+        
         itemLayout="vertical"
         dataSource={this.props.todoList}
-        renderItem={todo => (
+        renderItem={(todo) => (
           <List.Item>
-            <TodoContainer value={todo} /> 
+            <TodoContainer value={todo} />
           </List.Item>
         )}
       />

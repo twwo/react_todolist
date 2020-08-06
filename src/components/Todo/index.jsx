@@ -2,7 +2,7 @@ import React from "react";
 import "./todo.css";
 import { deleteTodo, putTodo } from "../../api";
 import { Button, Space, Card, Typography } from "antd";
-import { CloseOutlined } from "@ant-design/icons";
+import { CloseOutlined, MinusOutlined } from "@ant-design/icons";
 
 const { Text } = Typography;
 
@@ -41,14 +41,15 @@ export default class Todo extends React.Component {
   render() {
     return (
       <div>
-        <Space>
-          <Card>
-            <Text className={this.state.className} onClick={this.doneTodo}>
+        <Card style={{ background: "gray", width: "200px", height: "100px" }}>
+          <Space align="start">
+            <Text className={this.state.className}>
               {this.props.value.content}
             </Text>
+            <Button icon={<MinusOutlined />} onClick={this.doneTodo} />
             <Button icon={<CloseOutlined />} onClick={this.deleteTodo} />
-          </Card>
-        </Space>
+          </Space>
+        </Card>
       </div>
     );
   }

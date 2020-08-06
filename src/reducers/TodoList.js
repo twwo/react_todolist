@@ -2,8 +2,7 @@ const todoList = (state = [], action) => {
   switch (action.type) {
     case "ADD_TODO": {
       return [
-        ...state,
-        { id: action.id, content: action.content, status: false },
+        { id: action.id, content: action.content, status: false },...state
       ];
     }
 
